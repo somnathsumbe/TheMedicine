@@ -567,7 +567,7 @@ select:focus {
 .footer {
 	overflow: hidden;
 	position: relative;
-	padding: 120px 0px 0px;
+	padding: 40px 0px 0px;
 	background: url(../images/footerbg.png);
 	background-repeat: no-repeat;
 	background-position: top center;
