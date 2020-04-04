@@ -2,3 +2,6 @@ body.authentication-bg-pattern {
     /* background-image: url(../../../images/bg-pattern.png); */
     background-color: #6658dd;
 }
+input.ng-invalid.ng-touched{
+    border: red 1px solid;
+}
