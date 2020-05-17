@@ -31,8 +31,6 @@ loginResponce:any;
     this.loginResponce= this._LoginService.getLoginDetails(loginForm.value);
     this.loginResponce? alert("Login Successful"):alert("Invalid username/password");
     loginForm.reset();
-
-    
   }
 
 
