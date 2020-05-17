@@ -1,28 +1,39 @@
-import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl, FormBuilder, Validators } from "@angular/forms";
+import {
+  Component,
+  OnInit
+} from "@angular/core";
 
+import {
+  LoginService
+} from "src/app/services/login.service";
+import {
+  NgForm
+} from '@angular/forms';
+import { NgIf } from '@angular/common';
+
+interface login {
+  username: string;
+  password: string
+}
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.css"],
+  providers: [LoginService]
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup;
-  userName: string;
-  userPassword: string;
-  constructor(private formBuilder: FormBuilder) {
-    this.loginForm = formBuilder.group({
-      userName: ["",Validators.required],
-      userPassword: ["",Validators.required]
-    });
-  }
+loginResponce:any;
+  constructor(private _LoginService: LoginService) {}
 
   ngOnInit(): void {}
-  sendLoginFormData(loginForm: any) {
-    this.loginForm = loginForm;
-    this.userName = loginForm.controls.userName.value;
-    this.userPassword = loginForm.controls.userPassword.value;
-    console.log(this.userName);
-    console.log(this.userPassword);
+
+  loginUser(loginForm: NgForm) {
+    this.loginResponce= this._LoginService.getLoginDetails(loginForm.value);
+    this.loginResponce? alert("Login Successful"):alert("Invalid username/password");
+    loginForm.reset();
+
+    
   }
+
+
 }
