@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-forgetpassword',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgetpasswordComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _Router:Router) { }
 
   ngOnInit(): void {
   }
+
+  loginPage=()=>this._Router.navigate(['']);
+
 
 }

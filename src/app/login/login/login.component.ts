@@ -10,11 +10,9 @@ import {
   NgForm
 } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { Router } from '@angular/router';
 
-interface login {
-  username: string;
-  password: string
-}
+
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
@@ -23,15 +21,17 @@ interface login {
 })
 export class LoginComponent implements OnInit {
 loginResponce:any;
-  constructor(private _LoginService: LoginService) {}
+  constructor(private _LoginService: LoginService, private _Router:Router) {}
 
   ngOnInit(): void {}
 
-  loginUser(loginForm: NgForm) {
+  loginUser=(loginForm: any)=> {
     this.loginResponce= this._LoginService.getLoginDetails(loginForm.value);
     this.loginResponce? alert("Login Successful"):alert("Invalid username/password");
     loginForm.reset();
   }
 
+  forgotPassword=()=>  this._Router.navigate(['/forgetPassword']);
 
+  ragisterUser=()=>this._Router.navigate(['/ragisterUser']);
 }
