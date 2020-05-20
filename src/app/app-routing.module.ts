@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login/login.component';
 import { PagenotfoundComponent } from './login/pagenotfound/pagenotfound.component';
 import { ForgetpasswordComponent } from './login/forgetpassword/forgetpassword.component';
 import { SignupComponent } from './login/signup/signup.component';
+import { MainDashbordComponent } from './Dashbord/main-dashbord/main-dashbord.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   // { path: 'loginPage', component: LoginComponent},
   { path: 'forgetPassword', component: ForgetpasswordComponent},
   { path: 'ragisterUser', component: SignupComponent},
+  { path: 'dashbord', component: MainDashbordComponent},
   { path: '**', component: PagenotfoundComponent},
 ];
 

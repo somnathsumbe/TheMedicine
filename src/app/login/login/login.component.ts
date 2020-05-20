@@ -11,6 +11,7 @@ import {
 } from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
+import { MainDashbordComponent } from 'src/app/Dashbord/main-dashbord/main-dashbord.component';
 
 
 @Component({
@@ -26,9 +27,13 @@ loginResponce:any;
   ngOnInit(): void {}
 
   loginUser=(loginForm: any)=> {
-    this.loginResponce= this._LoginService.getLoginDetails(loginForm.value);
-    this.loginResponce? alert("Login Successful"):alert("Invalid username/password");
-    loginForm.reset();
+debugger;
+    if(loginForm){
+     var  dashbord=()=>  this._Router.navigate(['/forgetPassword']);
+    }
+    // this.loginResponce= this._LoginService.getLoginDetails(loginForm.value);
+    // this.loginResponce? alert("Login Successful"):alert("Invalid username/password");
+    // loginForm.reset();
   }
 
   forgotPassword=()=>  this._Router.navigate(['/forgetPassword']);

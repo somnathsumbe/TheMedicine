@@ -7,21 +7,11 @@
 
             <div class="card-body p-4">
 
-              <div class="text-center w-75 m-auto">
+              <div class="text-center">
                 <a href="index.html">
-                  <h4>The Medicine</h4>
+                  <h4>Animal Tracking System - ATS</h4>
                 </a>
               </div>
-              <!-- <ng-template [ngIf]="loginResponce==undefine" [ngIfElse]="elseblock">
-                <div>Login Successful</div>
-              </ng-template>
-      
-              <ng-template #elseblock>
-                <div>
-                  Invalid username/password
-                </div>
-              </ng-template> -->
-
               <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm)">
 
 
@@ -43,7 +33,7 @@
 
 
                 <div class="form-group mb-0 text-center">
-                  <button class="btn btn-primary btn-block" [disabled]="!loginForm.valid" type="submit"> Log In
+                  <button class="btn btn-primary btn-block" [routerLink]="['/dashbord']" [disabled]="!loginForm.valid" type="submit"> Log In
                   </button>
                 </div>
 
